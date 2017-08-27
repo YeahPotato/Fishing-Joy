@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{margin:0; padding:0; background:#000;}
+    	canvas{display:block; margin:20px auto ; background:url(img/game_bg_2_hd.jpg) no-repeat;}
+    </style>
+	<script src="./js/bullet.js"></script>
+	<script src="./js/coin.js"></script>
+	<script src="./js/diefish.js"></script>
+	
+	<script src="./js/fish.js"></script>
+	<script src="./js/cannon.js"></script>
+	<script src="./js/resouce.js"></script>
+	<script src="./js/loadImage.js"></script>
+	<script src="./js/init.js"></script>
+    <script>
+		/*function d2a(d){
+			return d/180*Math.PI;	
+		}
+		var SOURCE=[
+			'fish1',
+			'fish2',
+			'fish3',
+			'fish4',
+			'fish5'
+		];
+		var JSON={};
+		//fish
+		var FISH_SIZE=[
+			null,
+			{w: 55, h: 37, collR: 17},
+			{w: 78, h: 64, collR: 24},
+			{w: 72, h: 56, collR: 20},
+			{w: 77, h: 59, collR: 22},
+			{w: 107, h: 122, collR: 29}
+		];
+		
+		function Fish(type){
+			this.type=type;	
+			this.w=FISH_SIZE[this.type].w;
+			this.h=FISH_SIZE[this.type].h;
+			this.collR=FISH_SIZE[this.type].collR;
+			this.x=200;
+			this.y=200;
+			this.rotate=0;
+			this.speed=5;
+			this.cur=0;
+			this.move();
+		}
+		
+		Fish.prototype.draw=function(gd){
+			gd.beginPath();
+			gd.save();
+			gd.translate(this.x,this.y);
+			gd.rotate(d2a(this.rotate));
+			gd.drawImage(JSON['fish'+this.type],0,this.h*this.cur,this.w,this.h,-this.w/2,-this.h/2,this.w,this.h);
+			gd.restore();
+		};
+		Fish.prototype.move=function(){
+			var _this=this;
+			setInterval(function(){
+				_this.x+=_this.speed;
+			},100);
+			//尾巴
+			setInterval(function(){
+				_this.cur++;
+				_this.cur%=4;	
+			},100);
+		}
+		
+		//
+		
+		
+    	window.onload=function(){
+			var oC=document.querySelector('canvas');
+			var gd=oC.getContext('2d');
+			
+			//加载资源
+			function loadSource(arr,success){
+				var iCount=0;
+				for(var i=0; i<SOURCE.length;i++){
+					var oImg=new Image();
+					
+					(function(index){
+						oImg.onload=function(){
+							iCount++;
+							JSON[SOURCE[index]]=this;
+							if(iCount==SOURCE.length){
+								//alert('加载成功');
+								//加载成功做事
+								success && success();
+							}
+						};
+					})(i)	
+					//console.log(JSON);
+					oImg.src='img/'+SOURCE[i]+'.png';
+				}
+			}
+			//
+			loadSource(SOURCE,success);
+			
+			function success(){
+				gd.drawImage(JSON['fish5'],0,0,107,122,100,100,107,122);
+				var oFish=new Fish(5);
+				setInterval(function(){
+					gd.clearRect(0,0,oC.width,oC.height);
+					oFish.draw(gd);
+				},16);
+			}
+			
+				
+		};*/
+    </script>
+</head>
+<body>
+	<canvas width="800" height="600"></canvas>
+</body>
+</html>
